@@ -3,7 +3,7 @@ $main_source: 'Montserrat', sans-serif;
 
 
 // Colors
-$green:#4CB8D3;
+$green:#0f9b84;
 $pink:#F53256;
 $yellow:#F3F46D;
 $purple:#752F97;
@@ -11,4 +11,8 @@ $dark:#000000;
 $white: #FFFFFF;
 
 
-
+// Media Queries
+$phone: 468px;
+$tablet: 768px;
+$desktop: 992px;
+$desktopXL: 1200px;

@@ -172,7 +172,7 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+  appearance: button;
 }
 
 /**
@@ -263,7 +263,7 @@ textarea {
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 [type=search]::-webkit-search-decoration {
-  appearance: none;
+  -webkit-appearance: none;
 }
 
 /**
@@ -271,7 +271,7 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  appearance: button; /* 1 */
+  -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
 
@@ -326,6 +326,7 @@ body {
 p {
   font-size: 2rem;
   color: #000000;
+  line-height: 1.5;
 }
 
 .container {
@@ -354,17 +355,121 @@ h3 {
   font-size: 3rem;
 }
 
-header {
-  background-color: #4CB8D3;
-}
-header h1 {
-  color: #FFFFFF;
+img {
+  max-width: 100%;
+  display: block;
 }
 
+.header {
+  background-color: #0f9b84;
+}
+.header h1 {
+  color: #FFFFFF;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .header h1 {
+    margin: 0;
+  }
+}
+.header .content-header {
+  padding: 2rem;
+  margin-top: 0rem;
+}
+@media (min-width: 768px) {
+  .header .content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-navigation {
+    display: flex;
+    gap: 2rem;
+  }
+}
 .main-navigation a {
+  display: block;
+  text-align: center;
   color: #FFFFFF;
   font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .main-navigation a {
+    margin: 0;
+  }
 }
 .main-navigation a:hover {
   color: #F3F46D;
+}
+
+.video {
+  position: relative;
+  max-height: 70rem;
+  min-height: 50rem;
+  overflow: hidden;
+}
+.video .overlay {
+  position: absolute;
+  background: rgb(165, 3, 255);
+  background: linear-gradient(270deg, rgba(165, 3, 255, 0.5) 0%, rgba(255, 0, 110, 0.3) 100%);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.video video {
+  width: auto;
+  display: block;
+}
+@media (min-width: 992px) {
+  .video video {
+    width: 100%;
+  }
+}
+
+.video-content {
+  z-index: 1;
+}
+.video-content h2 {
+  color: #FFFFFF;
+  font-size: 6rem;
+  margin: 0;
+}
+.video-content p {
+  background-color: #F53256;
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.about-festival {
+  padding: 5rem, 0;
+}
+@media (min-width: 768px) {
+  .about-festival {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+}
+
+.festival-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.festival-content h2 {
+  margin-bottom: 2rem;
+}
+.festival-content .date {
+  color: #F53256;
+  font-weight: 700;
 }
